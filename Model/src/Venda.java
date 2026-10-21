@@ -7,7 +7,7 @@ public class Venda {
     private double desconto;
 
     public Venda() {
-        this.itens new ArrayList<>();
+        this.itens = new ArrayList<>();
         this.desconto = 0.0;
     }
 
@@ -16,6 +16,18 @@ public class Venda {
     }
 
     public void setDesconto(double desconto) {
+        this.desconto = desconto;
+    }
+
+    public void adicionarProduto(Produtos produtos, int quantidade){
+        ItemVenda novoItem = new ItemVenda (produtos,quantidade)
+                this.itens.add(novoItem);
+    }
+
+    public double getDesconto(){
+        return desconto;
+    }
+    public void setDesconto(double desconto){
         this.desconto = desconto;
     }
 }
