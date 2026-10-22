@@ -7,7 +7,6 @@ public class Venda {
     private double desconto;
 
     public Venda() {
-        this.itens = new ArrayList<>();
         this.desconto = 0.0;
     }
 
@@ -20,14 +19,22 @@ public class Venda {
     }
 
     public void adicionarProduto(Produtos produtos, int quantidade){
-        ItemVenda novoItem = new ItemVenda (produtos,quantidade)
+        ItemVenda novoItem = new ItemVenda (produtos,quantidade);
                 this.itens.add(novoItem);
     }
 
-    public double getDesconto(){
-        return desconto;
+    public void removerItem(ItemVenda item) {
+        this.itens.remove(item);
+
     }
-    public void setDesconto(double desconto){
-        this.desconto = desconto;
+
+    public double getTotal(){
+        double total = 0.0;
+
+        for (ItemVenda itemVenda : itens){
+            total += itemVenda.getSubTotal();
+        }
+
+        return total - desconto;
     }
 }

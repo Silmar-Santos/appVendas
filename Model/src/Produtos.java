@@ -40,4 +40,9 @@ public class Produtos {
     public void setPrecoVenda(double precoVenda) {
         this.precoVenda = precoVenda;
     }
+
+    @Override
+    public String toString() {
+        return "|ID|: " + id + " |DESCRICAO|: " + descricao + " |PRECO DE VENDA|: R$" + precoVenda;
+    }
 }
